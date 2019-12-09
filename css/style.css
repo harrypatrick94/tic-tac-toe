@@ -34,7 +34,8 @@ body {
   background-color: blue;
   margin: 6px 3px;
   text-align: center;
-  font-size: 130px;
+  font-size: 120px;
+  vertical-align: top;
 }
 
 .box:hover {

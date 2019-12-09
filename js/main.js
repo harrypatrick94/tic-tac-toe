@@ -28,7 +28,18 @@ $(document).ready(function (){
 
   $boxClick.on('click', function ( ev ) {
 
-    ev.target.id
+
+    let addToBox = ev.target.id
+
+     if (addToBox === 'box-1') {
+       $boxOne.append('X')
+     } else {
+       console.log('fuck off');
+     }
+
+
+
+
 
 
 
