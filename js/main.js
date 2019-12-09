@@ -18,23 +18,60 @@ $(document).ready(function (){
   let $boxEight = $('#box-8');
   let $boxNine = $('#box-9');
 
-  let findTheId = function (  ) {
-    if ($boxClick[0] === $boxOne) {
-    console.log(`You clicked ${$boxOne}`)
-  } else {
-    console.log('wrong click');
-  }
+
   }; // find id of clicked box
+  turnCounter = true;
+  let naughtOrCross = 'X'
+
+  // changes turn alternating between X and Y
+  let changeTurn = function ( count ) {
+
+    if (count === true) {
+        turnCounter = false
+        naughtOrCross = 'X'
+
+    } else if (count === false) {
+        turnCounter = true
+        naughtOrCross = 'Y'
+
+    }
+
+  };
+
+
+
+
 
   $boxClick.on('click', function ( ev ) {
 
-
     let addToBox = ev.target.id
+    console.log(addToBox);
+
+
+    changeTurn(turnCounter)
 
      if (addToBox === 'box-1') {
-       $boxOne.append('X')
+       $boxOne.append(naughtOrCross)
+     } else if (addToBox === 'box-2'){
+       $boxTwo.append(naughtOrCross)
+     } else if (addToBox === 'box-2'){
+       $boxTwo.append(naughtOrCross)
+     } else if (addToBox === 'box-3'){
+       $boxThree.append(naughtOrCross)
+     } else if (addToBox === 'box-4'){
+       $boxFour.append(naughtOrCross)
+     } else if (addToBox === 'box-5'){
+       $boxFive.append(naughtOrCross)
+     } else if (addToBox === 'box-6'){
+       $boxSix.append(naughtOrCross)
+     } else if (addToBox === 'box-7'){
+       $boxSeven.append(naughtOrCross)
+     } else if (addToBox === 'box-8'){
+       $boxEight.append(naughtOrCross)
+     } else if (addToBox === 'box-9'){
+       $boxNine.append(naughtOrCross)
      } else {
-       console.log('fuck off');
+       console.log('choose a box');
      }
 
 
