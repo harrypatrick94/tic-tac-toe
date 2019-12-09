@@ -5,9 +5,9 @@ $(document).ready(function (){
 
   // saving the link to each box
   let $boxClick = $('.box');
-  let $rowOne = $('.row')[0];
-  let $rowTwo = $('.row')[1];
-  let $rowThree = $('.row')[2];
+  let $rowOne = $('.row-1');
+  let $rowTwo = $('.row-1');
+  let $rowThree = $('.row-1');
   let $boxOne = $('#box-1');
   let $boxTwo = $('#box-2');
   let $boxThree = $('#box-3');
@@ -19,9 +19,10 @@ $(document).ready(function (){
   let $boxNine = $('#box-9');
 
 
-  }; // find id of clicked box
+  // find id of clicked box
   turnCounter = true;
   let naughtOrCross = 'X'
+
 
   // changes turn alternating between X and Y
   let changeTurn = function ( count ) {
@@ -32,58 +33,49 @@ $(document).ready(function (){
 
     } else if (count === false) {
         turnCounter = true
-        naughtOrCross = 'Y'
+        naughtOrCross = 'O'
 
     }
 
   };
+  // matches adds either person turn to box that has been clicked
+  let appendHtml = function ( boxClicked ) {
 
+    if (boxClicked === 'box-1') {
+      $boxOne.append(naughtOrCross)
+    } else if (boxClicked === 'box-2'){
+      $boxTwo.append(naughtOrCross)
+    } else if (boxClicked === 'box-2'){
+      $boxTwo.append(naughtOrCross)
+    } else if (boxClicked === 'box-3'){
+      $boxThree.append(naughtOrCross)
+    } else if (boxClicked === 'box-4'){
+      $boxFour.append(naughtOrCross)
+    } else if (boxClicked === 'box-5'){
+      $boxFive.append(naughtOrCross)
+    } else if (boxClicked === 'box-6'){
+      $boxSix.append(naughtOrCross)
+    } else if (boxClicked === 'box-7'){
+      $boxSeven.append(naughtOrCross)
+    } else if (boxClicked === 'box-8'){
+      $boxEight.append(naughtOrCross)
+    } else if (boxClicked === 'box-9'){
+      $boxNine.append(naughtOrCross)
+    } else {
+      console.log('choose a box');
+    }
 
-
-
+  }
 
   $boxClick.on('click', function ( ev ) {
 
+    // finds the box clicked and returns its id
     let addToBox = ev.target.id
-    console.log(addToBox);
-
-
+    // function changing returns
     changeTurn(turnCounter)
-
-     if (addToBox === 'box-1') {
-       $boxOne.append(naughtOrCross)
-     } else if (addToBox === 'box-2'){
-       $boxTwo.append(naughtOrCross)
-     } else if (addToBox === 'box-2'){
-       $boxTwo.append(naughtOrCross)
-     } else if (addToBox === 'box-3'){
-       $boxThree.append(naughtOrCross)
-     } else if (addToBox === 'box-4'){
-       $boxFour.append(naughtOrCross)
-     } else if (addToBox === 'box-5'){
-       $boxFive.append(naughtOrCross)
-     } else if (addToBox === 'box-6'){
-       $boxSix.append(naughtOrCross)
-     } else if (addToBox === 'box-7'){
-       $boxSeven.append(naughtOrCross)
-     } else if (addToBox === 'box-8'){
-       $boxEight.append(naughtOrCross)
-     } else if (addToBox === 'box-9'){
-       $boxNine.append(naughtOrCross)
-     } else {
-       console.log('choose a box');
-     }
-
-
-
-
-
-
-
+    // adding naught or cross to html depending on turn
+    appendHtml(addToBox)
 
   }); // click on box
 
 }); // jquery document ready
-
-// add to html
-// $('body').append($wordDiv);

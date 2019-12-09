@@ -17,14 +17,6 @@ body {
 
 }
 
-.row {
-  border: 1px solid red;
-  background-color: yellow;
-  width: 480px;
-
-
-}
-
 .box {
 
   display: inline-block;
