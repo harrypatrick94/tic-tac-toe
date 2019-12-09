@@ -103,9 +103,11 @@ $(document).ready(function (){
     let toBeAppended = $(`#${boxClicked}`)//`$${boxClicked}`
     for (var i = 0; i < gameBoard.length; i++) {
       for (var j = 0; j < gameBoard[i].length; j++) {
-        if (gameBoard[i][j] ===  boxClicked) {
-          // console.log(toBeAppended);
+        if (gameBoard[i][j] === boxClicked) {
+          console.log(toBeAppended);
           toBeAppended.append(naughtOrCross)
+        } else {
+          console.log(toBeAppended);
         }
       }
     }
