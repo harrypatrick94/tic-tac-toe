@@ -10,16 +10,13 @@ $(document).ready(function (){
 
     ],
 
-    beenPlayed: [
 
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ],
+
     $boxClick: $('.box'),
     saveVariables: function (){
 
       $boxClick =  $('.box')
+      $flashBox = $('#flash')
       rowOne = this.gameBoard[0]
       rowTwo = this.gameBoard[1]
       rowThree = this.gameBoard[2]
@@ -28,6 +25,13 @@ $(document).ready(function (){
       $rowThree = $('.row-3')
       turnCounter = true
       naughtOrCross = 'X'
+
+
+
+    },
+
+    gameEnd: function(){
+        $flashBox.fadeToggle()
     },
 
     // changes turn alternating between X and Y
@@ -48,11 +52,11 @@ $(document).ready(function (){
       let toBeAppended = $(`#${boxClicked}`)//`$${boxClicked}`
       for (var i = 0; i < this.gameBoard.length; i++) {
         for (var j = 0; j < this.gameBoard[i].length; j++) {
-          if (this.gameBoard[i][j] === boxClicked && this.beenPlayed[i][j] === '') {
+          if (this.gameBoard[i][j] === boxClicked && this.gameBoard[i][j] !== ('X' || 'O')) {
             //console.log(toBeAppended);
             this.changeTurn(turnCounter);
             toBeAppended.append(naughtOrCross)
-            this.beenPlayed[i][j] = naughtOrCross;
+            this.gameBoard[i][j] = naughtOrCross;
             // this.findWinnerLogic(naughtOrCross);
           } else {
             //console.log('Choose somewhere else');
@@ -61,43 +65,63 @@ $(document).ready(function (){
       }
     }, //
 
+
+
     findWinnerLogic: function ( player ) {
-      let checkBoard = this.beenPlayed
+      let checkBoard = this.gameBoard
       for (var i = 0; i < checkBoard.length; i++) {
             // row logic
           if (checkBoard[i][0] === checkBoard[i][1]
              && checkBoard[i][2] === checkBoard[i][1]
              && checkBoard[i][0] !== '') {
-            console.log(`Player: ${player} wins`);
+            this.gameEnd()
+            return true
             // colunm logic
           } else if (checkBoard[0][i] === checkBoard[1][i]
              && checkBoard[2][i] === checkBoard[1][i]
              && checkBoard[0][i] !== '') {
-            console.log(`Player: ${player} wins`);
+            this.gameEnd()
+            return true
             // diagonal logic
           } else if (checkBoard[0][0] === checkBoard[1][1]
              && checkBoard[2][2] === checkBoard[1][1]
              && checkBoard[0][0] !== '') {
-            console.log(`Player: ${player} wins`);
+            this.gameEnd()
+            return true
           }  else if (checkBoard[0][2] === checkBoard[1][1]
              && checkBoard[2][0] === checkBoard[1][1]
              && checkBoard[0][2] !== '') {
-            console.log(`Player: ${player} wins`);
+            this.gameEnd()
+            return true
           }
 
         }
     },
 
-    test: function() {this.$boxClick.on('click', function ( ev ) {
+    addWinnerBox: function (finalMove, winningLogic) {
+      if (winningLogic === true){
+      $flashBox.toggle()
+    } else {
+      console.log(finalMove);
+    }
+    },
+
+    clickEventBox: function() {this.$boxClick.on('click', function ( ev ) {
       let addToBox = ev.target.id;
 
       ticTacToe.loopAppendHtml(addToBox);
-      ticTacToe.findWinnerLogic(naughtOrCross);
-      console.log(addToBox);
+      ticTacToe.findWinnerLogic(naughtOrCross)
+      let lastMove = naughtOrCross
+      ticTacToe.addWinnerBox(lastMove, ticTacToe.findWinnerLogic())
+
+
       })
-    },
+    }, // end of gmae click event
+
+
+
   }
   ticTacToe.saveVariables()
-  ticTacToe.test()
+  ticTacToe.clickEventBox()
 
 }); // jquery document ready

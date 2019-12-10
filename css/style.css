@@ -22,6 +22,7 @@ h1, h2 {
   width: 49%;
   background-color: pink;
 }
+
 /* Rule section */
 #flash {
 
@@ -29,6 +30,7 @@ h1, h2 {
   width: 400px;
   border: 1px solid black;
   margin: 10px auto;
+  display: none;
 
 }
 
@@ -47,10 +49,10 @@ h1, h2 {
   background-color: darkgoldenrod;
   display: block;
   width: 480px;
+  border-radius: 5px;
 
 
 }
-
 
 .box {
 
@@ -62,6 +64,7 @@ h1, h2 {
   text-align: center;
   font-size: 110px;
   vertical-align: top;
+  border-radius: 5px;
 }
 
 .box:hover {
