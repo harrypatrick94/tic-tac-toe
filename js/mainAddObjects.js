@@ -1,102 +1,125 @@
 $(document).ready(function (){
 
-  let gameBoard = [
+  let ticTacToe = {
 
-    ['boxOne', 'boxTwo', 'boxThree'],
-    ['boxFour', 'boxFive', 'boxSix'],
-    ['boxSeven', 'boxEight', 'boxNine']
+    gameBoard: [
 
-  ];
+      ['boxOne', 'boxTwo', 'boxThree'],
+      ['boxFour', 'boxFive', 'boxSix'],
+      ['boxSeven', 'boxEight', 'boxNine']
 
-  let beenPlayed = [
+    ],
 
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ]
+    beenPlayed: [
 
-  // saving the link to each box
-  let $boxClick = $('.box');
-  let $rowOne = $('.row-1');
-  let $rowTwo = $('.row-1');
-  let $rowThree = $('.row-1');
-  let rowOne = gameBoard[0];
-  let rowTwo = gameBoard[1];
-  let rowThree = gameBoard[2];
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', ''],
+    ],
 
-  let turnCounter = true;
-  let naughtOrCross = 'X';
-  let alreadyClicked = [];
+    saveVariables: function (){
 
-  // changes turn alternating between X and Y
-  let changeTurn = function ( count ) {
+      $boxClick =  $('.box')
+      rowOne = this.gameBoard[0]
+      rowTwo = this.gameBoard[1]
+      rowThree = this.gameBoard[2]
+      $rowOne = $('.row-1')
+      $rowTwo = $('.row-2')
+      $rowThree = $('.row-3')
+      turnCounter = true
+      naughtOrCross = 'X'
+    },
 
-    if (count === true) {
-        turnCounter = false
-        naughtOrCross = 'X'
+    // changes turn alternating between X and Y
+    changeTurn: function ( count ) {
+      // checking to see if count is true or false
+      if (count === true) {
+          // setting turnCounter to false and ouput to X
+            turnCounter = false
+            naughtOrCross = 'X'
 
-    } else if (count === false) {
-        turnCounter = true
-        naughtOrCross = 'O'
+      } else if (count === false) {
+            turnCounter = true
+            naughtOrCross = 'O'
+          }
+    },
 
-    }
-
-  };
-
-  let loopAppendHtml = function ( boxClicked ) {
-    let toBeAppended = $(`#${boxClicked}`)//`$${boxClicked}`
-    for (var i = 0; i < gameBoard.length; i++) {
-      for (var j = 0; j < gameBoard[i].length; j++) {
-        if (gameBoard[i][j] === boxClicked && beenPlayed[i][j] === '') {
-          //console.log(toBeAppended);
-          changeTurn(turnCounter);
-          toBeAppended.append(naughtOrCross)
-          beenPlayed[i][j] = naughtOrCross
-
-        } else {
-          //console.log('Choose somewhere else');
+    loopAppendHtml: function ( boxClicked ) {
+      let toBeAppended = $(`#${boxClicked}`)//`$${boxClicked}`
+      for (var i = 0; i < this.gameBoard.length; i++) {
+        for (var j = 0; j < this.gameBoard[i].length; j++) {
+          if (this.gameBoard[i][j] === boxClicked && this.beenPlayed[i][j] === '') {
+            //console.log(toBeAppended);
+            this.changeTurn(turnCounter);
+            toBeAppended.append(naughtOrCross)
+            this.beenPlayed[i][j] = naughtOrCross;
+            // this.findWinnerLogic(naughtOrCross);
+          } else {
+            //console.log('Choose somewhere else');
+          }
         }
       }
-    }
-  }; // add to box
+    }, //
 
+    findWinnerLogic: function ( player ) {
+      let checkBoard = this.beenPlayed
+      for (var i = 0; i < checkBoard.length; i++) {
+            // row logic
+          if (checkBoard[i][0] === checkBoard[i][1]
+             && checkBoard[i][2] === checkBoard[i][1]
+             && checkBoard[i][0] !== '') {
+            console.log(`Player: ${player} wins`);
+            // colunm logic
+          } else if (checkBoard[0][i] === checkBoard[1][i]
+             && checkBoard[2][i] === checkBoard[1][i]
+             && checkBoard[0][i] !== '') {
+            console.log(`Player: ${player} wins`);
+            // diagonal logic
+          } else if (checkBoard[0][0] === checkBoard[1][1]
+             && checkBoard[2][2] === checkBoard[1][1]
+             && checkBoard[0][0] !== '') {
+            console.log(`Player: ${player} wins`);
+          }  else if (checkBoard[0][2] === checkBoard[1][1]
+             && checkBoard[2][0] === checkBoard[1][1]
+             && checkBoard[0][2] !== '') {
+            console.log(`Player: ${player} wins`);
+          }
 
-  let findWinnerLogic = function ( player ) {
-
-    for (var i = 0; i < beenPlayed.length; i++) {
-          // row logic
-        if (beenPlayed[i][0] === beenPlayed[i][1]
-           && beenPlayed[i][2] === beenPlayed[i][1]
-           && beenPlayed[i][0] !== '') {
-          console.log(`Player: ${player} wins`);
-          // colunm logic
-        } else if (beenPlayed[0][i] === beenPlayed[1][i]
-           && beenPlayed[2][i] === beenPlayed[1][i]
-           && beenPlayed[0][i] !== '') {
-          console.log(`Player: ${player} wins`);
-          // diagonal logic
-        } else if (beenPlayed[0][0] === beenPlayed[1][1]
-           && beenPlayed[2][2] === beenPlayed[1][1]
-           && beenPlayed[0][0] !== '') {
-          console.log(`Player: ${player} wins`);
-        }  else if (beenPlayed[0][2] === beenPlayed[1][1]
-           && beenPlayed[2][0] === beenPlayed[1][1]
-           && beenPlayed[0][2] !== '') {
-          console.log(`Player: ${player} wins`);
         }
+    },
 
-      }}; // find winner logic
+    test: $boxClick.on('click', function ( ev ) {
+      let addToBox = ev.target.id;
+      console.log(addToBox);
 
-  $boxClick.on('click', function ( ev ) {
+    }),
 
-    // finds the box clicked and returns its id
-    let addToBox = ev.target.id;
-    // function changing returns
 
-    // adding naught or cross to html depending on turn
-    loopAppendHtml(addToBox);
-    findWinnerLogic(naughtOrCross);
+//
 
-    console.log(beenPlayed);
-  }); // click on box
+
+ // find winner logic
+//
+
+//
+//   // end of Object
+//
+//
+//   boxClick: function () {
+//
+//   this.$boxClick.on('click', function ( ev ) {
+//
+//    // finds the box clicked and returns its id
+//
+//    // function changing returns
+//    // adding naught or cross to html depending on turn
+//    this.loopAppendHtml(addToBox);
+//    // THIS ABOVE REFERS TO CLICK NOT FUNCTION
+//  })// click on box
+
+
+}
+  ticTacToe.saveVariables()
+  ticTacToe.test()
+
 }); // jquery document ready

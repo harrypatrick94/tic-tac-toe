@@ -97,6 +97,6 @@ $(document).ready(function (){
     loopAppendHtml(addToBox);
     findWinnerLogic(naughtOrCross);
 
-    console.log(beenPlayed);
+    // console.log(beenPlayed);
   }); // click on box
 }); // jquery document ready
