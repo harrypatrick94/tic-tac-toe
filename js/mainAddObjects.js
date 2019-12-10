@@ -16,7 +16,7 @@ $(document).ready(function (){
       ['', '', ''],
       ['', '', ''],
     ],
-
+    $boxClick: $('.box'),
     saveVariables: function (){
 
       $boxClick =  $('.box')
@@ -88,37 +88,15 @@ $(document).ready(function (){
         }
     },
 
-    test: $boxClick.on('click', function ( ev ) {
+    test: function() {this.$boxClick.on('click', function ( ev ) {
       let addToBox = ev.target.id;
-      console.log(addToBox);
 
-    }),
-
-
-//
-
-
- // find winner logic
-//
-
-//
-//   // end of Object
-//
-//
-//   boxClick: function () {
-//
-//   this.$boxClick.on('click', function ( ev ) {
-//
-//    // finds the box clicked and returns its id
-//
-//    // function changing returns
-//    // adding naught or cross to html depending on turn
-//    this.loopAppendHtml(addToBox);
-//    // THIS ABOVE REFERS TO CLICK NOT FUNCTION
-//  })// click on box
-
-
-}
+      ticTacToe.loopAppendHtml(addToBox);
+      ticTacToe.findWinnerLogic(naughtOrCross);
+      console.log(turnCounter);
+      })
+    },
+  }
   ticTacToe.saveVariables()
   ticTacToe.test()
 
