@@ -93,7 +93,7 @@ $(document).ready(function (){
 
       ticTacToe.loopAppendHtml(addToBox);
       ticTacToe.findWinnerLogic(naughtOrCross);
-      console.log(turnCounter);
+      console.log(addToBox);
       })
     },
   }
