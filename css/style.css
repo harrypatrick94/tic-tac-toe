@@ -45,8 +45,8 @@ h1, h2 {
 
 .container {
   margin: 10px auto;
-  border: 1px solid black;
-  background-color: darkgoldenrod;
+  border: px solid black;
+  background-color: white;
   display: block;
   width: 480px;
   border-radius: 5px;
@@ -54,17 +54,27 @@ h1, h2 {
 
 }
 
+ .row-2{
+  margin: 6px 0;
+}
+
+#boxTwo, #boxFive, #boxEight {
+  margin: 0 3px;
+}
+
 .box {
 
   display: inline-block;
-  height: 149px;
-  width: 149px;
-  background-color: #9B111E;
-  margin: 6px 3px;
+  height: 153px;
+  width: 153px;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  background-image: url(../images/chalkboard.png);
+  background-size: cover;
   text-align: center;
   font-size: 110px;
   vertical-align: top;
-  border-radius: 5px;
+
 }
 
 .box:hover {
