@@ -67,7 +67,7 @@ $(document).ready(function (){
 
 
 
-    findWinnerLogic: function ( player ) {
+    findWinnerLogic: function () {
       let checkBoard = this.gameBoard
       for (var i = 0; i < checkBoard.length; i++) {
             // row logic
@@ -100,6 +100,7 @@ $(document).ready(function (){
 
     addWinnerBox: function (finalMove, winningLogic) {
       if (winningLogic === true){
+      $flashBox.text(`Winner is player ${finalMove}`)
       $flashBox.toggle()
     } else {
       console.log(finalMove);
@@ -110,7 +111,7 @@ $(document).ready(function (){
       let addToBox = ev.target.id;
 
       ticTacToe.loopAppendHtml(addToBox);
-      ticTacToe.findWinnerLogic(naughtOrCross)
+      ticTacToe.findWinnerLogic()
       let lastMove = naughtOrCross
       ticTacToe.addWinnerBox(lastMove, ticTacToe.findWinnerLogic())
 
