@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function (){
 
   let gameBoard = [
@@ -61,8 +58,34 @@ $(document).ready(function (){
         }
       }
     }
-
   }; // add to box
+
+
+  let findWinnerLogic = function ( player ) {
+
+    for (var i = 0; i < beenPlayed.length; i++) {
+          // row logic
+        if (beenPlayed[i][0] === beenPlayed[i][1]
+           && beenPlayed[i][2] === beenPlayed[i][1]
+           && beenPlayed[i][0] !== '') {
+          console.log(`Player: ${player} wins`);
+          // colunm logic
+        } else if (beenPlayed[0][i] === beenPlayed[1][i]
+           && beenPlayed[2][i] === beenPlayed[1][i]
+           && beenPlayed[0][i] !== '') {
+          console.log(`Player: ${player} wins`);
+          // diagonal logic
+        } else if (beenPlayed[0][0] === beenPlayed[1][1]
+           && beenPlayed[2][2] === beenPlayed[1][1]
+           && beenPlayed[0][0] !== '') {
+          console.log(`Player: ${player} wins`);
+        }  else if (beenPlayed[0][2] === beenPlayed[1][1]
+           && beenPlayed[2][0] === beenPlayed[1][1]
+           && beenPlayed[0][2] !== '') {
+          console.log(`Player: ${player} wins`);
+        }
+
+      }}; // find winner logic
 
   $boxClick.on('click', function ( ev ) {
 
@@ -72,6 +95,7 @@ $(document).ready(function (){
 
     // adding naught or cross to html depending on turn
     loopAppendHtml(addToBox);
+    findWinnerLogic(naughtOrCross);
 
     console.log(beenPlayed);
   }); // click on box
