@@ -13,7 +13,7 @@ font-family: 'Fredericka the Great', cursive;
 
 }
 
-h1, h2 {
+h1 {
 
 text-align: center;
 
@@ -72,4 +72,4 @@ vertical-align: top;
 
 #flash {
   display: none;
-} 
+}

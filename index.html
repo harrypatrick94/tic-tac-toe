@@ -23,8 +23,14 @@
 
       <div id="scoreboard">
         <h1>Scoreboard</h1>
-        <div class="board" id="x"><h3>Player X</h3></div>
-        <div class="board" id="y"><h3>Player Y</h3></div>
+        <div class="board" id="xScore">
+          <h3>Player X</h3>
+          <p></p>
+        </div>
+        <div class="board" id="oScore">
+          <h3>Player Y</h3>
+          <p></p>
+        </div>
         <div id="flash">
           <p></p>
         </div>
@@ -36,19 +42,19 @@
       <h1 id="heading">tic-tac-toe</h1>
       <div class="container">
         <div class="row-1">
-          <div class="box" id="boxOne"></div>
-          <div class="box" id="boxTwo"></div>
-          <div class="box" id="boxThree"></div>
+          <div class="box" id="boxOne" x="0" y="0"></div>
+          <div class="box" id="boxTwo" x="0" y="1"></div>
+          <div class="box" id="boxThree" x="0" y="2"></div>
         </div>
         <div class="row-2">
-          <div class="box" id="boxFour"></div>
-          <div class="box" id="boxFive"></div>
-          <div class="box" id="boxSix"></div>
+          <div class="box" id="boxFour" x="1" y="0"></div>
+          <div class="box" id="boxFive" x="1" y="1"></div>
+          <div class="box" id="boxSix" x="1" y="2"></div>
         </div>
         <div class="row-3">
-          <div class="box" id="boxSeven"></div>
-          <div class="box" id="boxEight"></div>
-          <div class="box" id="boxNine"></div>
+          <div class="box" id="boxSeven" x="0" y="1"></div>
+          <div class="box" id="boxEight" x="1" y="1"></div>
+          <div class="box" id="boxNine" x="2" y="2"></div>
         </div>
       </div>
     </div>
