@@ -109,6 +109,16 @@ li {
 
 }
 
+#flash {
+
+  text-align: center;
+  margin: 10px 55px;
+  display: inline-block;
+  width: 200px;
+
+
+}
+
 .blob {
   position: absolute;
   border-radius: 50%;

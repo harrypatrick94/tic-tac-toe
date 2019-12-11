@@ -101,6 +101,13 @@ $(document).ready(function (){
       if (winningLogic === true){
       $flashBox.text(`Winner is player ${finalMove}. play again?`)
       $flashBox.toggle()
+      ticTacToe.gameBoard =  [
+
+        ['boxOne', 'boxTwo', 'boxThree'],
+        ['boxFour', 'boxFive', 'boxSix'],
+        ['boxSeven', 'boxEight', 'boxNine']
+
+      ]
       } else {
       console.log(finalMove);
       }
@@ -109,11 +116,12 @@ $(document).ready(function (){
 
     clickEventBox: function() {this.$boxClick.on('click', function ( ev ) {
       let addToBox = ev.target.id;
-      console.log(addToBox);
+
       ticTacToe.loopAppendHtml(addToBox);
       ticTacToe.findWinnerLogic()
       let lastMove = naughtOrCross
       ticTacToe.addWinnerBox(lastMove, ticTacToe.findWinnerLogic())
+      console.log(ticTacToe.movesPlayed);
 
 
       })
@@ -122,7 +130,9 @@ $(document).ready(function (){
     reset: $('#flash').on('click', function () {
       console.log('works');
       $boxClick.empty()
-      console.log(ticTacToe.gameBoard);
+      $flashBox.toggle()
+
+
     })
 
   }
