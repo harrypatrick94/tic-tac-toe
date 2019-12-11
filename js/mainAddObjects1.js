@@ -14,7 +14,7 @@ $(document).ready(function (){
 
     $boxClick: $('.box'),
     $flashBox: $('#flash'),
-    saveVariables: function (){
+    saveVariables: function () {
 
       $boxClick =  $('.box')
       $flashBox = $('#flash')

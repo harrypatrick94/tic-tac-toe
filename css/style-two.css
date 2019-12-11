@@ -1,0 +1,109 @@
+/* CSS everythig */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border: 1px solid black;
+  font-family: 'Indie Flower';
+  margin: 0;
+
+}
+
+.grid, .grid-1 {
+  border: 1px solid green;
+  display: inline-block;
+  vertical-align: top;
+}
+
+h1, h3 {
+  font-family: 'Fredericka the Great', cursive;
+}
+h3 {
+  text-align: center;
+  font-size: 30px;
+
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+
+}
+
+/* CSS Rules */
+
+.grid {
+
+  width: 22%
+
+}
+
+li {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+/* CSS Game */
+
+.grid-1 {
+  width: 77%;
+  background-image: url(../images/greenboard.jpg);
+  background-size: cover;
+  display: inline-block;
+
+}
+
+.container {
+
+  width: 539px;
+  border: 1px solid green;
+  display: block;
+  margin: 5px auto 40px;
+
+}
+
+.row-3 {
+
+  height: 175px;
+
+}
+
+.box {
+
+  border: 1px solid black;
+  width: 175px;
+  height: 175px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 135px;
+  text-align: center;
+
+}
+/* CSS Score */
+#scoreboard h1 {
+
+  font-size: 30px;
+
+}
+#scoreboard {
+
+  letter-spacing: 3px;
+  height: 300px;
+  width: 100%;
+  background-image: url(../images/chalkboard.png);
+  background-size: cover;
+  display: inline-block;
+  color: white;
+}
+
+
+
+#x, #y {
+
+  width: 49%;
+
+
+}
