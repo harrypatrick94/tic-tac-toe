@@ -74,13 +74,11 @@ li {
 
 }
 
-.box:hover{
-  border: 1px solid grey;
-}
+
 
 .box {
 
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 175px;
   height: 175px;
   display: inline-block;
@@ -133,8 +131,9 @@ li {
 
   text-align: center;
   margin: 30px 55px 10px;
-  display: inline-block;
+  display: none;
   width: 200px;
+
 
 
 }
