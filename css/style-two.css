@@ -92,7 +92,7 @@ ul{
 
 .container {
 
-  width: 539px;
+  width: 49%;
   /* border: 1px solid black; */
   display: block;
   margin: 5px auto 40px;
@@ -102,7 +102,7 @@ ul{
 
 .containerPredrawn {
 
-  width: 539px;
+  width: 49%;
   /* border: 1px solid green; */
   display: block;
   margin: 5px auto 40px;
@@ -110,12 +110,6 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 
-
-}
-
-.row-3 {
-
-  height: 175px;
 
 }
 
