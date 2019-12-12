@@ -37,7 +37,7 @@ $(document).ready(function () {
 
   $(document).on('keypress', function (event){
 
-    if (event.key === 'u')
+    if (event.key === ' ')
 
     $('div.blob').remove()
 

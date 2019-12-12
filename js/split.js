@@ -104,7 +104,7 @@ $(document).ready(function (  ){
     ticTacToe.play(clickPosition)
 
   });
-
+  // event handler restart game
   $('#flash').on('click', function (){
 
 
@@ -112,9 +112,9 @@ $(document).ready(function (  ){
     ticTacToe.reset( gameOver )
 
   })
-
+  // switch boards to draw own baord
   $('.screenChange').on('click', function (){
     // $('div.gridPredrawn').toggleClass('.grid-1')
     $('#game').toggleClass('gridPredrawn').toggleClass('grid-1');
   })
-})
+})  
