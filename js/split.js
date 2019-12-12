@@ -48,10 +48,10 @@ let ticTacToe = {
           || (checkBoard[0][2] === checkBoard[1][1] && checkBoard[2][0] === checkBoard[1][1] && checkBoard[0][2] !== '') ) {
           // this.gameEnd()
           gameOver = true
-          $('#flash').text(`Winner is player ${naughtOrCross}. play again?`)
+          $('#flash').text(`Winner is player ${naughtOrCross}. click here to play again?`)
           $('#flash').toggle()
       } else if (turn === 10 ) {
-        $('#flash').text(`Game is a draw... play again?`)
+        $('#flash').text(`Game is a draw... click here to play again?`)
         $('#flash').toggle()
         gameOver = true
         draw = true
@@ -86,8 +86,11 @@ let ticTacToe = {
   },
   // run all game functions
   play: function ( boxClicked) {
+
     this.findBox( boxClicked );
     this.findWinnerLogic();
+
+
 
   }
 }
@@ -107,8 +110,11 @@ $(document).ready(function (  ){
 
     ticTacToe.addScore(naughtOrCross)
     ticTacToe.reset( gameOver )
-    console.log(ticTacToe.gameBoard);
-    console.log(turn);
 
+  })
+
+  $('.screenChange').on('click', function (){
+    // $('div.gridPredrawn').toggleClass('.grid-1')
+    $('#game').toggleClass('gridPredrawn').toggleClass('grid-1');
   })
 })

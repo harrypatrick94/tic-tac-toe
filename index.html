@@ -12,23 +12,24 @@
 
   </head>
   <body>
-    <div class="grid" id="rules">
-      <h1>Rules</h1>
-      <ol>
-        <li>The game is played on a grid that's 3 squares by 3 squares.</li>
-        <li>You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.</li>
-        <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
-        <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
-      </ol>
-
+    <div class="grid" >
+      <div id="rules">
+        <h1>Rules</h1>
+        <ol>
+          <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+          <li>You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.</li>
+          <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+          <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
+        </ol>
+      </div>
       <div id="scoreboard">
         <h1>Scoreboard</h1>
         <div class="board" id="xScore">
-          <h3>Player X</h3>
+          <h3>Player X:</h3>
           <p></p>
         </div>
         <div class="board" id="oScore">
-          <h3>Player O</h3>
+          <h3>Player O:</h3>
           <p></p>
         </div>
         <div id="flash">
@@ -38,8 +39,8 @@
 
     </div>
 
-    <div class="grid-1" id="game">
-      <h1 id="heading">tic-tac-toe</h1>
+    <div class="gridPredrawn" id="game">
+      <h1 id="heading">Tic-Tac-Toe</h1>
       <div class="container">
         <div class="row-1">
           <div class="box" id="boxOne" x="0" y="0"></div>
@@ -58,6 +59,8 @@
         </div>
       </div>
     </div>
-
+    <div  class="screenChange" id="">
+        <p>Draw your own board.. Click here!!</p>
+    </div>
   </body>
 </html>
