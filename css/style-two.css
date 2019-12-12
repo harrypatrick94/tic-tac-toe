@@ -21,6 +21,8 @@ body {
   vertical-align: top;
 }
 
+
+
 h1{
   font-family: 'Fredericka the Great', cursive;
 }
@@ -59,28 +61,55 @@ li {
 
 /* CSS Game */
 
-.grid-1 {
-  width: 77%;
-  background-image: url(../images/greenboard.jpg);
-  background-size: cover;
+#game {
+  background-size: contain;
+  background-repeat: no-repeat;
   display: inline-block;
+  width: 77%;
+  position: relative;
+}
 
+#instructions {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+.grid-1 {
+  background-image: url(../images/greenboard.jpg);
 }
 /* predrawn */
 .gridPredrawn {
-  width: 77%;
   background-image: url(../images/preDrawn.png);
-  background-size: cover;
-  display: inline-block;
 
+}
+
+ul{
+  list-style: none;
+    margin: 0;
+    display: inline-block;
 }
 
 .container {
 
   width: 539px;
+  /* border: 1px solid black; */
+  display: block;
+  margin: 5px auto 40px;
+
+
+}
+
+.containerPredrawn {
+
+  width: 539px;
   /* border: 1px solid green; */
   display: block;
   margin: 5px auto 40px;
+  background-image: url(../images/backgroundContainer.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
 
 }
 
@@ -169,6 +198,8 @@ ol {
   text-align: center;
   display: none;
   width: 200px;
+  margin: 10px;
+
 
 }
 

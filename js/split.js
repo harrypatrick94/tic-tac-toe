@@ -115,6 +115,6 @@ $(document).ready(function (  ){
   // switch boards to draw own baord
   $('.screenChange').on('click', function (){
     // $('div.gridPredrawn').toggleClass('.grid-1')
-    $('#game').toggleClass('gridPredrawn').toggleClass('grid-1');
+    $('#tog').toggleClass('container').toggleClass('containerPredrawn');
   })
-})  
+})
