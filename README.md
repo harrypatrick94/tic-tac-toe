@@ -1,7 +1,7 @@
 # tic-tac-toe
 ### GA Project 0: Tic-Tac-Toe
 
-![Game example](../images/gamePicture.png)
+![Game example](images/gamePicture.png)
 
 **Find the game at: https://harrypatrick94.github.io/tic-tac-toe/**
 
