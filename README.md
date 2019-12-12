@@ -23,4 +23,8 @@
 * At the moment the playing board is not scalable
 * First move is always O
 
-This projects uses **HTML, CSS, JavaScript and jQuery.**
+**Technology Used** 
+* HTML
+* CSS
+* JavaScript
+* jQuery
